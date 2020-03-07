@@ -6,7 +6,7 @@ Size of items in demo is 50,000 product item name.
  
 #### Source clone:
 ```bash
-$ git clone 
+$ git clone https://github.com/NgTung/go_bloom_filter.git
 ```
 #### Run app:
 ```bash
