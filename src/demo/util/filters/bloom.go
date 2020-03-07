@@ -39,9 +39,7 @@ func InitBloomFilter(elementNumber int32, hashList []hash.Hash) BloomFilters {
 func (b *bloomFilterImpl) Add(value interface{}) {
 	for _, h := range b.hashFuncList {
 		hashPosition := getPosition(hashing(h, value), b.size)
-		if b.bitSet[hashPosition] == 0 {
-			b.bitSet[hashPosition] = 1
-		}
+		b.bitSet[hashPosition] = 1
 	}
 }
 
@@ -68,7 +66,7 @@ func (b *bloomFilterImpl) MightContain(value interface{}) bool {
 //  - https://hur.st/bloomfilter/ (for visualize)
 //
 func getSizeOfBitSet(elementNum int32) int64 {
-	bitSetSize := math.Ceil((float64(elementNum) * math.Log(P)) / math.Log(1 / math.Pow(2, math.Log(2))))
+	bitSetSize := math.Ceil((float64(elementNum) * math.Log(P)) / math.Log(1/math.Pow(2, math.Log(2))))
 	return int64(bitSetSize)
 }
 
