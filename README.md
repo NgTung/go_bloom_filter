@@ -11,7 +11,7 @@ $ git clone https://github.com/NgTung/go_bloom_filter.git
 #### Run app:
 ```bash
 $ go get -u github.com/gin-gonic/gin
-$ go get -u "github.com/spaolacci/murmur3"
+$ go get -u github.com/spaolacci/murmur3
 $ cd src/demo/cmd/; go run main.go
 ```
 * Query item:
