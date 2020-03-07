@@ -1,6 +1,7 @@
 # Bloom Filter in Golang
 A simple bloom filter implementation in Golang run on [Gin framework](https://github.com/gin-gonic/gin).
-Original blog (Vietnamese): 
+
+Original blog (Vietnamese): https://medium.com/@ngtung/bloom-filter-trong-golang-211d00443721
 
 Size of items in demo is 50,000 product item name.
  
