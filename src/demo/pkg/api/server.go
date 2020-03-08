@@ -23,9 +23,8 @@ func Start() {
 
 	server.Use(RequestValidator, BloomFilter)
 
-	productNames := file.LoadFileContent(DataFileName)
-
 	server.GET("/product", func(ctx *gin.Context) {
+		productNames := file.LoadFileContent(DataFileName)
 		item, _ := ctx.GetQuery("item")
 		for _, pName := range productNames {
 			if pName == item {
@@ -42,7 +41,7 @@ func Start() {
 // Request validator middleware
 func RequestValidator(ctx *gin.Context) {
 	if _, ok := ctx.GetQuery("item"); !ok {
-		ctx.JSON(400, gin.H{"error": "item name can not be empty",})
+		ctx.JSON(400, gin.H{"error": "item name can not be empty"})
 		ctx.Abort()
 	}
 	ctx.Next()
@@ -62,7 +61,7 @@ func BloomFilter(ctx *gin.Context) {
 
 func InitBloomFilter() filters.BloomFilters {
 	// Hash function should be non-cryptographic
-	hashFunctions:= []hash.Hash {
+	hashFunctions := []hash.Hash{
 		fnv.New64(),
 		fnv.New64a(),
 		murmur3.New64(),

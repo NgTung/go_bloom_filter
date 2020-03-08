@@ -1,0 +1,4 @@
+http://localhost:8080/product?item=hop%20hoa%20hong%2012
+http://localhost:8080/product?item=hop%20hoa%20hong%2014
+http://localhost:8080/product?item=hop%20hoa%20hong%2015
+http://localhost:8080/product?item=hop%20hoa%20hong%2016
